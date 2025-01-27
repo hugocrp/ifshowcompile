@@ -1,0 +1,14 @@
+[Unit]
+Description=ifnetshow agent service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=vyos
+ExecStart=/usr/local/bin/ifnetshowagent /usr/local/bin/ifshow
+
+[Install]
+WantedBy=multi-user.target
